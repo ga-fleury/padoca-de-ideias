@@ -1,0 +1,21 @@
+$color-bg: #1e2856;
+$color-bg-secondary: #4d1d8f;
+$color-accent: #9d35b0;
+$color-secondary: #d053b0;
+$color-primary: #ffd200;
+
+$layout-padding: 1rem;
+
+$font-display: bold 2.5rem "Rubik", sans-serif;
+$font-text: normal 1rem "Rubik", sans-serif;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition-duration: 0.1s;
+}
+
+:root {
+  font-size: 16px;
+}

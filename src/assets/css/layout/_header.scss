@@ -1,0 +1,42 @@
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font: $font-display;
+  font-size: 1rem;
+
+  &__wrap {
+    position: absolute;
+    top: 20px;
+    width: 90%;
+    z-index: 10;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+  }
+  &__left {
+    display: flex;
+    align-items: center;
+  }
+
+  &__link {
+    margin: 0px 10px;
+  }
+
+  &__cta {
+    text-transform: uppercase;
+  }
+
+  &__icon {
+    filter: saturate(0) brightness(2);
+    transition-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+
+    &:hover {
+      filter: none;
+    }
+  }
+}

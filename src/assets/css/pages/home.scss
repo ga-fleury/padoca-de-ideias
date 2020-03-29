@@ -1,0 +1,60 @@
+.hero {
+  //bg using before and after as overlays to make the cool bottom clipping effect
+  &__bg {
+    height: 100vh;
+    width: 100vw;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      background-color: lighten($color-bg, 20%);
+      opacity: 0.2;
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 96%);
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 96%);
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      background-color: $color-bg;
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%);
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%);
+    }
+  }
+  //bg end
+
+  &__text-wrap {
+    position: absolute;
+    top: 35%;
+    left: 10%;
+    z-index: 5;
+    width: 40%;
+    border-radius: 15px;
+    background-color: #fff;
+    padding: 2rem;
+  }
+
+  &__title {
+    font: $font-display;
+    color: $color-bg;
+    padding: $layout-padding/2 0;
+  }
+  &__desc {
+    font: $font-text;
+    font-size: 1.5rem;
+    color: $color-bg;
+  }
+  &__mockup {
+    top: 5%;
+    right: 25%;
+    position: absolute;
+    z-index: 2;
+  }
+}

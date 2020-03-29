@@ -1,0 +1,97 @@
+@mixin pink-neon {
+  box-shadow: 0 0 10px $color-primary, 0 0 40px $color-primary,
+  0 0 80px $color-primary;
+  background-color: $color-primary;
+}
+
+// neon button header cta start
+.btn-neon {
+  position: relative;
+  display: inline-block;
+  padding: 15px 30px;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 4px;
+  overflow: hidden;
+  transition-duration: 0.2s;
+  border-radius: 8px;
+
+  &:hover {
+    color: #fff;
+    @include pink-neon;
+    transition-delay: 0.3s;
+    border-radius: 8px;
+  }
+}
+
+a span {
+  position: absolute;
+  display: block;
+
+  &:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, $color-primary);
+  }
+  &:nth-child(2) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, $color-primary, transparent);
+  }
+  &:nth-child(3) {
+    top: -100%;
+    right: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, $color-primary);
+  }
+  &:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(90deg, $color-primary, transparent);
+  }
+}
+
+a:hover {
+  & span:nth-child(1) {
+    left: 100%;
+    transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  & span:nth-child(2) {
+    right: 100%;
+    transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  & span:nth-child(3) {
+    top: 100%;
+    transition: 1s 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  & span:nth-child(4) {
+    bottom: 100%;
+    transition: 1s 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+}
+// neon button cta header finish
+
+.hero__button {
+  padding: .5rem 1rem;
+  color: $color-primary;
+  border: 3px solid $color-primary;
+  border-radius: 10px;
+  font: $font-display;
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin: $layout-padding 0;
+  transition-duration: .2s;
+
+  &:hover {
+    color: #fff;
+    @include pink-neon;
+  }
+}
